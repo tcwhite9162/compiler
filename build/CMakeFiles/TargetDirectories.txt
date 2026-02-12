@@ -1,0 +1,3 @@
+/home/tcwhite/Projects/C-C++/compiler/build/CMakeFiles/main.dir
+/home/tcwhite/Projects/C-C++/compiler/build/CMakeFiles/edit_cache.dir
+/home/tcwhite/Projects/C-C++/compiler/build/CMakeFiles/rebuild_cache.dir

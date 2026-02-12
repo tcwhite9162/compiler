@@ -1,0 +1,10 @@
+let x = 2;
+let f = 1;
+
+# comment
+fn some_function(x, y) : float {
+    return sin(x) * sin(y) + x * y;
+}
+
+let y = some_function(x, f);
+return y;

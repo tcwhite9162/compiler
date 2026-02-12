@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/tcwhite/Projects/C-C++/compiler/build",
+  "command": "/usr/bin/c++  -I/home/tcwhite/Projects/C-C++/compiler/include -std=gnu++23 -Wall -Wextra -o CMakeFiles/main.dir/src/lexer.cpp.o -c /home/tcwhite/Projects/C-C++/compiler/src/lexer.cpp",
+  "file": "/home/tcwhite/Projects/C-C++/compiler/src/lexer.cpp",
+  "output": "CMakeFiles/main.dir/src/lexer.cpp.o"
+},
+{
+  "directory": "/home/tcwhite/Projects/C-C++/compiler/build",
+  "command": "/usr/bin/c++  -I/home/tcwhite/Projects/C-C++/compiler/include -std=gnu++23 -Wall -Wextra -o CMakeFiles/main.dir/src/main.cpp.o -c /home/tcwhite/Projects/C-C++/compiler/src/main.cpp",
+  "file": "/home/tcwhite/Projects/C-C++/compiler/src/main.cpp",
+  "output": "CMakeFiles/main.dir/src/main.cpp.o"
+}
+]
