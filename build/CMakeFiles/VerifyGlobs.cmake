@@ -6,6 +6,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/tcwhite/Projects/C-C++/
 set(OLD_GLOB
   "/home/tcwhite/Projects/C-C++/compiler/include/arena.hpp"
   "/home/tcwhite/Projects/C-C++/compiler/include/lexer.hpp"
+  "/home/tcwhite/Projects/C-C++/compiler/include/parser.hpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -33,6 +34,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/tcwhite/Projects/C-C++/
 set(OLD_GLOB
   "/home/tcwhite/Projects/C-C++/compiler/src/lexer.cpp"
   "/home/tcwhite/Projects/C-C++/compiler/src/main.cpp"
+  "/home/tcwhite/Projects/C-C++/compiler/src/parser.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

@@ -29,11 +29,28 @@ enum class TokenType : int {
     LeftSquare,
     RightSquare,
 
+    Function,
+    Arrow,
+    Let,
+    If,
+    Else,
+    Return,
+
     Comment,
     FileEnd,
 
     Unknown
 };
+
+inline const char* type_to_string(TokenType t) {
+    static const char* names[] = {"Number",     "Identifier",  "Plus",        "Minus",     "Asterisk",   "Slash",
+                                  "Equal",      "LessThan",    "GreaterThan", "Dot",       "Comma",      "Colon",
+                                  "SemiColon",  "SingleQuote", "DoubleQuote", "LeftParen", "RightParen", "LeftCurly",
+                                  "RightCurly", "LeftSquare",  "RightSquare", "Function",  "Arrow",      "Let",
+                                  "If",         "Else",        "Return",      "Comment",   "FileEnd",    "Unknown"};
+
+    return names[static_cast<int>(t)];
+}
 
 struct Token {
   public:
@@ -44,16 +61,7 @@ struct Token {
 
     void set_value(std::string_view val) noexcept { value = std::move(val); }
 
-    const char* to_string() const noexcept {
-        static const char* names[] = {"Number",     "Identifier",  "Plus",        "Minus",     "Asterisk",   "Slash",
-                                      "Equal",      "LessThan",    "GreaterThan", "Dot",       "Comma",      "Colon",
-                                      "SemiColon",  "SingleQuote", "DoubleQuote", "LeftParen", "RightParen", "LeftCurly",
-                                      "RightCurly", "LeftSquare",  "RightSquare", "Comment",   "FileEnd",    "Unknown"};
-
-        return names[static_cast<int>(type)];
-    }
-
-    void print() const noexcept { std::cout << line << "| " << to_string() << ": " << value << std::endl; }
+    void print() const noexcept { std::cout << line << "| " << type_to_string(type) << ": " << value << std::endl; }
 
     TokenType type;
     std::string_view value;
@@ -90,6 +98,7 @@ class Lexer {
     Token get_number() noexcept;
     Token atom(TokenType t) noexcept;
     Token comment() noexcept;
+    Token equal_or_arrow() noexcept;
 
     char peek() const { return *position; };
     char advance() { return *position++; }

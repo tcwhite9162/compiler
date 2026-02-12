@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/tcwhite/Projects/C-C++/compiler/src/lexer.cpp" "CMakeFiles/main.dir/src/lexer.cpp.o" "gcc" "CMakeFiles/main.dir/src/lexer.cpp.o.d"
   "/home/tcwhite/Projects/C-C++/compiler/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
+  "/home/tcwhite/Projects/C-C++/compiler/src/parser.cpp" "CMakeFiles/main.dir/src/parser.cpp.o" "gcc" "CMakeFiles/main.dir/src/parser.cpp.o.d"
   "" "main" "gcc" "CMakeFiles/main.dir/link.d"
   )
 

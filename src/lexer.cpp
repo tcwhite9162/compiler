@@ -1,6 +1,22 @@
-#include "../include/lexer.hpp"
+#include "lexer.hpp"
 
+#include <cctype>
 #include <fstream>
+
+static std::optional<TokenType> keyword_lookup(std::string_view s) {
+    if (s == "function")
+        return TokenType::Function;
+    if (s == "let")
+        return TokenType::Let;
+    if (s == "if")
+        return TokenType::If;
+    if (s == "else")
+        return TokenType::Else;
+    if (s == "return")
+        return TokenType::Return;
+
+    return std::nullopt;
+}
 
 Token Lexer::get_identifier() noexcept {
     const char* start = position;
@@ -9,7 +25,12 @@ Token Lexer::get_identifier() noexcept {
         advance();
     }
 
-    return Token(TokenType::Identifier, arena.copy(start, position - start), curr_line);
+    std::string_view txt = arena.copy(start, position - start);
+
+    if (auto keyword = keyword_lookup(txt))
+        return Token(keyword.value(), txt, curr_line);
+
+    return Token(TokenType::Identifier, txt, curr_line);
 }
 
 Token Lexer::get_number() noexcept {
@@ -26,6 +47,18 @@ Token Lexer::atom(TokenType t) noexcept {
     advance();
 
     return Token(t, arena.copy(start, 1), curr_line);
+}
+
+Token Lexer::equal_or_arrow() noexcept {
+    const char* start = position;
+
+    advance();
+    if (peek() == '>') {
+        advance();
+        return Token(TokenType::Arrow, arena.copy(start, 2), curr_line);
+    }
+
+    return Token(TokenType::Equal, arena.copy(start, 1), curr_line);
 }
 
 Token Lexer::comment() noexcept {
@@ -45,7 +78,7 @@ Token Lexer::next() noexcept {
         advance();
     }
 
-    if (is_ident_char(peek()) || peek() == '_')
+    if (std::isalpha(static_cast<unsigned char>(peek())) || peek() == '_')
         return get_identifier();
 
     if (is_digit(peek()))
@@ -53,7 +86,7 @@ Token Lexer::next() noexcept {
 
     switch (peek()) {
     case '\0':
-        return Token(TokenType::FileEnd, arena.copy(position, 1), curr_line);
+        return Token(TokenType::FileEnd, "", curr_line);
     case '(':
         return atom(TokenType::LeftParen);
     case ')':
@@ -70,8 +103,6 @@ Token Lexer::next() noexcept {
         return atom(TokenType::LessThan);
     case '>':
         return atom(TokenType::GreaterThan);
-    case '=':
-        return atom(TokenType::Equal);
     case '+':
         return atom(TokenType::Plus);
     case '-':
@@ -94,6 +125,8 @@ Token Lexer::next() noexcept {
         return atom(TokenType::Colon);
     case '#':
         return comment();
+    case '=':
+        return equal_or_arrow();
 
     default:
         return atom(TokenType::Unknown);

@@ -1,0 +1,14 @@
+function divide(a: u32, b: u32) => optional<f32> {
+    if b == 0 {
+        return null;
+    }
+    return a / b;
+}
+
+function main(argc: u32, argv: array<string>) => i32 {
+    # comment
+    let x: u32 = 5;
+    let y = 1;
+
+    return divide(x, y);
+}
