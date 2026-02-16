@@ -1,0 +1,8 @@
+function test(param1: Array<int>) => null {
+    return null;
+}
+
+function main() => i32 {
+    test();
+    return 0;
+}

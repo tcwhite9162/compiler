@@ -16,5 +16,11 @@
   "command": "/usr/bin/c++  -I/home/tcwhite/Projects/C-C++/compiler/include -std=gnu++23 -Wall -Wextra -o CMakeFiles/main.dir/src/parser.cpp.o -c /home/tcwhite/Projects/C-C++/compiler/src/parser.cpp",
   "file": "/home/tcwhite/Projects/C-C++/compiler/src/parser.cpp",
   "output": "CMakeFiles/main.dir/src/parser.cpp.o"
+},
+{
+  "directory": "/home/tcwhite/Projects/C-C++/compiler/build",
+  "command": "/usr/bin/c++  -I/home/tcwhite/Projects/C-C++/compiler/include -std=gnu++23 -Wall -Wextra -o CMakeFiles/main.dir/src/pratt.cpp.o -c /home/tcwhite/Projects/C-C++/compiler/src/pratt.cpp",
+  "file": "/home/tcwhite/Projects/C-C++/compiler/src/pratt.cpp",
+  "output": "CMakeFiles/main.dir/src/pratt.cpp.o"
 }
 ]

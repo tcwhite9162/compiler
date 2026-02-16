@@ -107,6 +107,8 @@ Token Lexer::next() noexcept {
         return atom(TokenType::Plus);
     case '-':
         return atom(TokenType::Minus);
+    case '!':
+        return atom(TokenType::Exclamation);
     case '*':
         return atom(TokenType::Asterisk);
     case '/':

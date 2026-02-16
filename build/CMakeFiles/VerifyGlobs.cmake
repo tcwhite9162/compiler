@@ -35,6 +35,7 @@ set(OLD_GLOB
   "/home/tcwhite/Projects/C-C++/compiler/src/lexer.cpp"
   "/home/tcwhite/Projects/C-C++/compiler/src/main.cpp"
   "/home/tcwhite/Projects/C-C++/compiler/src/parser.cpp"
+  "/home/tcwhite/Projects/C-C++/compiler/src/pratt.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

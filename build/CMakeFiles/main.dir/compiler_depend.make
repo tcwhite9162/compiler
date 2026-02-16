@@ -253,6 +253,7 @@ CMakeFiles/main.dir/src/lexer.cpp.o: /home/tcwhite/Projects/C-C++/compiler/src/l
 CMakeFiles/main.dir/src/main.cpp.o: /home/tcwhite/Projects/C-C++/compiler/src/main.cpp \
   /home/tcwhite/Projects/C-C++/compiler/include/arena.hpp \
   /home/tcwhite/Projects/C-C++/compiler/include/lexer.hpp \
+  /home/tcwhite/Projects/C-C++/compiler/include/parser.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -386,6 +387,7 @@ CMakeFiles/main.dir/src/main.cpp.o: /home/tcwhite/Projects/C-C++/compiler/src/ma
   /usr/include/c++/15.2.1/bits/std_abs.h \
   /usr/include/c++/15.2.1/bits/stl_algo.h \
   /usr/include/c++/15.2.1/bits/stl_algobase.h \
+  /usr/include/c++/15.2.1/bits/stl_bvector.h \
   /usr/include/c++/15.2.1/bits/stl_construct.h \
   /usr/include/c++/15.2.1/bits/stl_function.h \
   /usr/include/c++/15.2.1/bits/stl_heap.h \
@@ -394,6 +396,8 @@ CMakeFiles/main.dir/src/main.cpp.o: /home/tcwhite/Projects/C-C++/compiler/src/ma
   /usr/include/c++/15.2.1/bits/stl_iterator_base_types.h \
   /usr/include/c++/15.2.1/bits/stl_pair.h \
   /usr/include/c++/15.2.1/bits/stl_tempbuf.h \
+  /usr/include/c++/15.2.1/bits/stl_uninitialized.h \
+  /usr/include/c++/15.2.1/bits/stl_vector.h \
   /usr/include/c++/15.2.1/bits/streambuf.tcc \
   /usr/include/c++/15.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/15.2.1/bits/string_view.tcc \
@@ -404,6 +408,7 @@ CMakeFiles/main.dir/src/main.cpp.o: /home/tcwhite/Projects/C-C++/compiler/src/ma
   /usr/include/c++/15.2.1/bits/uses_allocator.h \
   /usr/include/c++/15.2.1/bits/uses_allocator_args.h \
   /usr/include/c++/15.2.1/bits/utility.h \
+  /usr/include/c++/15.2.1/bits/vector.tcc \
   /usr/include/c++/15.2.1/bits/version.h \
   /usr/include/c++/15.2.1/cctype \
   /usr/include/c++/15.2.1/cerrno \
@@ -449,6 +454,7 @@ CMakeFiles/main.dir/src/main.cpp.o: /home/tcwhite/Projects/C-C++/compiler/src/ma
   /usr/include/c++/15.2.1/tuple \
   /usr/include/c++/15.2.1/type_traits \
   /usr/include/c++/15.2.1/typeinfo \
+  /usr/include/c++/15.2.1/vector \
   /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
   /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++allocator.h \
   /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -746,6 +752,9 @@ CMakeFiles/main.dir/src/parser.cpp.o: /home/tcwhite/Projects/C-C++/compiler/src/
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h
 
+CMakeFiles/main.dir/src/pratt.cpp.o: /home/tcwhite/Projects/C-C++/compiler/src/pratt.cpp \
+  /usr/include/stdc-predef.h
+
 main: /usr/lib/Scrt1.o \
   /usr/lib/crti.o \
   /usr/lib/crtn.o \
@@ -764,8 +773,11 @@ main: /usr/lib/Scrt1.o \
   /usr/lib/libmvec.so.1 \
   CMakeFiles/main.dir/src/lexer.cpp.o \
   CMakeFiles/main.dir/src/main.cpp.o \
-  CMakeFiles/main.dir/src/parser.cpp.o
+  CMakeFiles/main.dir/src/parser.cpp.o \
+  CMakeFiles/main.dir/src/pratt.cpp.o
 
+
+CMakeFiles/main.dir/src/pratt.cpp.o:
 
 CMakeFiles/main.dir/src/parser.cpp.o:
 
@@ -794,6 +806,8 @@ CMakeFiles/main.dir/src/lexer.cpp.o:
 /usr/lib/libgcc_s.so.1:
 
 /usr/lib/crti.o:
+
+/usr/lib/Scrt1.o:
 
 /usr/include/c++/15.2.1/bits/postypes.h:
 
@@ -888,8 +902,6 @@ CMakeFiles/main.dir/src/lexer.cpp.o:
 /usr/include/c++/15.2.1/backward/binders.h:
 
 /usr/include/bits/types/timer_t.h:
-
-/usr/lib/Scrt1.o:
 
 /usr/include/c++/15.2.1/bits/char_traits.h:
 
@@ -1265,8 +1277,6 @@ CMakeFiles/main.dir/src/lexer.cpp.o:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/messages_members.h:
 
-/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/os_defines.h:
-
 /usr/include/bits/endianness.h:
 
 /usr/include/libintl.h:
@@ -1309,10 +1319,14 @@ CMakeFiles/main.dir/src/lexer.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h:
 
-/home/tcwhite/Projects/C-C++/compiler/src/parser.cpp:
-
 /usr/include/c++/15.2.1/bits/stl_algo.h:
 
 /usr/include/pthread.h:
 
 /usr/include/c++/15.2.1/bits/stl_uninitialized.h:
+
+/home/tcwhite/Projects/C-C++/compiler/src/parser.cpp:
+
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/os_defines.h:
+
+/home/tcwhite/Projects/C-C++/compiler/src/pratt.cpp:

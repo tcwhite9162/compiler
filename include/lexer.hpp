@@ -14,6 +14,7 @@ enum class TokenType : int {
     Equal,
     LessThan,
     GreaterThan,
+    Exclamation,
 
     Dot,
     Comma,
@@ -44,7 +45,7 @@ enum class TokenType : int {
 
 inline const char* type_to_string(TokenType t) {
     static const char* names[] = {"Number",     "Identifier",  "Plus",        "Minus",     "Asterisk",   "Slash",
-                                  "Equal",      "LessThan",    "GreaterThan", "Dot",       "Comma",      "Colon",
+                                  "Equal",      "LessThan",    "GreaterThan", "Exclamation",  "Dot",       "Comma",      "Colon",
                                   "SemiColon",  "SingleQuote", "DoubleQuote", "LeftParen", "RightParen", "LeftCurly",
                                   "RightCurly", "LeftSquare",  "RightSquare", "Function",  "Arrow",      "Let",
                                   "If",         "Else",        "Return",      "Comment",   "FileEnd",    "Unknown"};

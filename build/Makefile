@@ -202,6 +202,30 @@ src/parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/parser.cpp.s
 .PHONY : src/parser.cpp.s
 
+src/pratt.o: src/pratt.cpp.o
+.PHONY : src/pratt.o
+
+# target to build an object file
+src/pratt.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/pratt.cpp.o
+.PHONY : src/pratt.cpp.o
+
+src/pratt.i: src/pratt.cpp.i
+.PHONY : src/pratt.i
+
+# target to preprocess a source file
+src/pratt.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/pratt.cpp.i
+.PHONY : src/pratt.cpp.i
+
+src/pratt.s: src/pratt.cpp.s
+.PHONY : src/pratt.s
+
+# target to generate assembly for a file
+src/pratt.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/pratt.cpp.s
+.PHONY : src/pratt.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -220,6 +244,9 @@ help:
 	@echo "... src/parser.o"
 	@echo "... src/parser.i"
 	@echo "... src/parser.s"
+	@echo "... src/pratt.o"
+	@echo "... src/pratt.i"
+	@echo "... src/pratt.s"
 .PHONY : help
 
 
